@@ -1,0 +1,260 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Setup */
+body {
+  min-height: 100vh;
+  background-color: black;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "navbar navbar"
+    "profile content";
+  overflow: hidden;
+}
+
+/* Navbar */
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #2600ff;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: color 0.4s ease, transform 0.4s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #1a1aff;
+  display: inline-block;
+}
+
+/* Hamburger Menu Button */
+.menu-btn {
+  display: none;
+  background-color: #1a1aff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #ffdd57;
+  color: black;
+}
+
+/* Navigation List */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar ul li {
+  margin-left: 20px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: #1a1aff;
+  display: inline-block;
+  transition: background-color 0.4s ease, transform 0.4s ease, color 0.3s ease;
+}
+
+.logo:hover,
+.navbar ul li:hover {
+  background-color: #ffdd57;
+  transform: scale(0.95);
+}
+
+.logo:hover,
+.navbar ul li:hover a {
+  color: black !important;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+  display: block;
+  user-select: none;
+  text-align: center;
+}
+
+.navbar ul li a:hover {
+  color: #ffdd57;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+
+/* Profile Section */
+.profile {
+  grid-area: profile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+}
+
+.profile img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Main Content */
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  height: 100%;
+}
+
+.content h1 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: yellow;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "navbar"
+      "profile"
+      "content";
+  }
+
+  .profile {
+    padding: 30px;
+  }
+
+  .content {
+    padding: 30px 20px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Keep only horizontal padding */
+    height: 80px; /* 🔧 Force fixed height */
+    flex-wrap: nowrap; /* 🔧 Prevent wrapping */
+  }
+
+  .logo {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 18px; /* Optional: scale logo font down */
+  }
+
+ .content h1 {
+    font-size: 21px;
+    margin-bottom: 7px;
+  }
+
+  .content p {
+    font-size: 14px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .profile {
+    padding: 10px;
+    border-radius: 10%;
+    border-color: white;
+  }
+
+  .profile img {
+    width: 200px;
+    height: 200px;
+      border-radius: 50%;
+    border-color: white;
+  }
+
+  .content {
+    padding: 0 10px;
+    margin-top: -50px;
+  }
+
+  .content h1 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .content p {
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .navbar {
+    padding: 0 20px;
+    height: 80px; /* 🔧 Force consistent height */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap; /* 🔧 Prevent wrap */
+  }
+
+  .navbar ul li a {
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  .menu-btn {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+}
