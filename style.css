@@ -98,9 +98,10 @@ body {
 .profile {
   grid-area: profile;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px; /* increased padding */
+  margin-left: 40px; /* adds space from the left edge */
 }
 
 .profile img {
