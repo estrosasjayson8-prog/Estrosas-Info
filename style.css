@@ -1,11 +1,10 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body Setup */
+
 body {
   min-height: 100vh;
   background-color: black;
@@ -13,7 +12,7 @@ body {
   color: white;
 }
 
-/* Grid Container */
+
 .grid-container {
   display: grid;
   grid-template-rows: 80px 1fr;
@@ -25,7 +24,7 @@ body {
   overflow: hidden;
 }
 
-/* Navbar */
+
 .navbar {
   grid-area: navbar;
   display: flex;
@@ -49,7 +48,7 @@ body {
   display: inline-block;
 }
 
-/* Hamburger Menu Button */
+
 .menu-btn {
   display: none;
   background-color: #1a1aff;
@@ -68,7 +67,7 @@ body {
   color: black;
 }
 
-/* Navigation List */
+
 .navbar ul {
   display: flex;
   list-style: none;
@@ -113,24 +112,24 @@ body {
   border-radius: 5px;
 }
 
-/* Profile Section */
+
 .profile {
   grid-area: profile;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
   padding: 20px;
   height: 100%;
 }
 
 .profile img {
-  width: 180px;
-  height: 180px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* Main Content */
+
 .content {
   grid-area: content;
   display: flex;
@@ -175,15 +174,15 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Keep only horizontal padding */
-    height: 80px; /* 🔧 Force fixed height */
-    flex-wrap: nowrap; /* 🔧 Prevent wrapping */
+    padding: 0 20px; 
+    height: 80px; 
+    flex-wrap: nowrap; 
   }
 
   .logo {
     margin-bottom: 0;
     text-align: left;
-    font-size: 18px; /* Optional: scale logo font down */
+    font-size: 18px; 
   }
 
  .content h1 {
@@ -207,11 +206,76 @@ body {
 }
 
 
+@media (max-width: 668px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "navbar"
+      "profile"
+      "content";
+  }
+
+  .profile {
+  grid-area: profile;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  height: 100%;
+}
+
+  .profile img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+  .content {
+    padding: 28px 18px;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 18px; 
+    height: 78px; 
+    flex-wrap: nowrap; 
+  }
+
+  .logo {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 16px;
+  }
+
+ .content h1 {
+    font-size: 19px;
+    margin-bottom: 7px;
+  }
+
+  .content p {
+    font-size: 12px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .profile {
     padding: 10px;
     border-radius: 10%;
     border-color: white;
+     align-items: right center;
   }
 
   .profile img {
