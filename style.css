@@ -44,7 +44,7 @@ body.fade-out {
 }
 
 .logo {
-    text-decoration: none;
+  text-decoration: none;
   font-size: 22px;
   font-weight: bold;
   color: white;
@@ -115,8 +115,6 @@ body.fade-out {
 .navbar ul li a:hover {
   text-shadow: 0 0 8px #ffdd57;
 }
-
-
 
 /* ========== PROFILE SECTION ========== */
 .profile {
@@ -254,7 +252,7 @@ body.fade-out {
   }
 
   #navLinks.show {
-    display: flex;           /* show when toggled */
+    display: flex;
   }
 
   #navLinks li {
@@ -275,6 +273,7 @@ body.fade-out {
     background-color: #778da9;
     color: black;
   }
+
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -317,6 +316,7 @@ body.fade-out {
   .text-bg h1 {
     font-size: 20px;
   }
+
   .text-bg p {
     font-size: 14px;
   }
