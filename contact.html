@@ -3,19 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Home | MyPortfolio</title>
+  <link rel="stylesheet" href="contact.css" />
+  <title>Contact | MyPortfolio</title>
 </head>
 <body>
   <div class="grid-container">
     <header class="navbar">
       <a href="./special.html" class="logo">MyPortfolio</a>
-
-      <button class="menu-btn" id="menuBtn">☰</button>
-      <ul id="navLinks">
-        <li><a href="./index.html" class="active">Home</a></li>
+      <button class="menu-btn">☰</button>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
-        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./contact.html" class="active">Contact</a></li>
       </ul>
     </header>
 
@@ -25,9 +24,17 @@
 
     <main class="content">
       <div class="text-bg">
-        <h1>HI MY NAME IS JAYSON ;></h1>
-        <p>IT STUDENT</p>
-      </div>
+  <h1>Contact Me</h1>
+  <p>
+   Email:<a href="https://mail.google.com/mail/?view=cm&to=estrosasjayson8@gmail.com" target="_blank">
+      estrosasjayson8@gmail.com
+    </a> 
+    <br>
+    Phone: 09859845145 <br>
+    Facebook: <a href="https://www.facebook.com/Cagadoc.TrishaMae.22" target="_blank">Estrosas Jayson</a>
+  </p>
+</div>
+
     </main>
   </div>
 
@@ -66,14 +73,6 @@ logo.addEventListener('click', e => {
   }, 500);
 });
 
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
 </script>
-
 </body>
 </html>

@@ -35,7 +35,7 @@ body.fade-out {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1403fc;
+  background-color: #5a09f2;
   padding: 0 20px;
   position: relative;
   animation: fadeDown 0.8s ease-out;
@@ -48,7 +48,7 @@ body.fade-out {
   font-size: 22px;
   font-weight: bold;
   color: white;
-  background-color: #1a1aff;
+  background-color: #ab1aff;
   border-radius: 6px;
   padding: 8px 16px;
   transition: color 0.4s ease, transform 0.3s ease, background-color 0.3s ease;
@@ -57,14 +57,14 @@ body.fade-out {
 }
 
 .logo:hover {
-  background-color: #ffdd57;
+  background-color: #8323ea;
   color: black;
   transform: scale(1.08); /* smooth zoom on hover */
 }
 
 .menu-btn {
   display: none;
-  background-color: #1a1aff;
+  background-color: #b61aff;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -76,7 +76,7 @@ body.fade-out {
 }
 
 .menu-btn:hover {
-  background-color: #ffdd57;
+  background-color: #eb57ff;
   color: black;
 }
 
@@ -97,7 +97,7 @@ body.fade-out {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  background-color: #1a1aff;
+  background-color: #a40efb;
   border-radius: 6px;
   padding: 8px 16px; /* consistent padding for no jump */
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -106,14 +106,14 @@ body.fade-out {
 /* ✅ Zoom effect with stability (no shift) */
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  background-color: #ffdd57;
+  background-color: #57a0ff;
   color: black;
   transform: scale(1.08); /* smooth zoom in */
 }
 
 /* ✅ Optional glow for hover */
 .navbar ul li a:hover {
-  text-shadow: 0 0 8px #ffdd57;
+  text-shadow: 0 0 8px #ff578c;
 }
 
 
@@ -240,41 +240,7 @@ body.fade-out {
 }
 
 @media (max-width: 768px) {
-  #navLinks {
-    display: none;           /* hidden initially */
-    flex-direction: column;  /* vertical layout */
-    background-color: #1b263b; /* adjust to your navbar color */
-    position: absolute;
-    top: 80px;               /* below navbar */
-    left: 0;
-    width: 100%;
-    text-align: center;
-    z-index: 999;
-    padding: 10px 0;
-  }
-
-  #navLinks.show {
-    display: flex;           /* show when toggled */
-  }
-
-  #navLinks li {
-    margin: 10px 0;
-  }
-
-  #navLinks li a {
-    display: block;
-    padding: 8px 16px;
-    color: white;
-    text-decoration: none;
-    background-color: #415a77;
-    border-radius: 6px;
-    transition: background 0.3s, color 0.3s;
-  }
-
-  #navLinks li a:hover {
-    background-color: #778da9;
-    color: black;
-  }
+    
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-areas:

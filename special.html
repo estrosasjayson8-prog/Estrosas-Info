@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="special.css" />
   <title>Home | MyPortfolio</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
 
       <button class="menu-btn" id="menuBtn">☰</button>
       <ul id="navLinks">
-        <li><a href="./index.html" class="active">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
@@ -25,8 +25,8 @@
 
     <main class="content">
       <div class="text-bg">
-        <h1>HI MY NAME IS JAYSON ;></h1>
-        <p>IT STUDENT</p>
+        <h1>Welcome po thank you for viewing my page ;></h1>
+        <p>We only live once so we do everything like it's our last.</p>
       </div>
     </main>
   </div>
@@ -57,20 +57,13 @@ logo.addEventListener('click', e => {
   }
 
   // Optional custom output
-  alert("Welcome to My Page po");
+  alert("Welcome to My Special Page!");
 
   // Fade out then navigate
   document.body.classList.add('fade-out');
   setTimeout(() => {
     window.location.href = href;
   }, 500);
-});
-
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
 });
 
 </script>

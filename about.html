@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Home | MyPortfolio</title>
+  <link rel="stylesheet" href="about.css" />
+  <title>About | MyPortfolio</title>
 </head>
 <body>
   <div class="grid-container">
     <header class="navbar">
-      <a href="./special.html" class="logo">MyPortfolio</a>
-
-      <button class="menu-btn" id="menuBtn">☰</button>
-      <ul id="navLinks">
-        <li><a href="./index.html" class="active">Home</a></li>
-        <li><a href="./about.html">About</a></li>
+    <a href="./special.html" class="logo">MyPortfolio</a>
+       <button class="menu-btn">&#9776;</button>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
         <li><a href="./contact.html">Contact</a></li>
       </ul>
     </header>
@@ -25,13 +24,20 @@
 
     <main class="content">
       <div class="text-bg">
-        <h1>HI MY NAME IS JAYSON ;></h1>
-        <p>IT STUDENT</p>
+        <h1>About Me</h1>
+        <p>Hi, I’m Jayson! I’m an IT student with a passion for technology.</p>
+        <p>Here are some of my strengths:</p>
+        <ul>
+          <li>Quick learner and adaptable</li>
+          <li>Team collaboration skills</li>
+          <li>Attention to detail</li>
+          <li>Creativity in solving problems</li>
+        </ul>
       </div>
     </main>
   </div>
 
-  <script>
+ <script>
   // Fade-out for regular navbar links (excluding logo)
   const links = document.querySelectorAll('.navbar ul li a');
   links.forEach(link => {
@@ -64,13 +70,6 @@ logo.addEventListener('click', e => {
   setTimeout(() => {
     window.location.href = href;
   }, 500);
-});
-
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
-
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
 });
 
 </script>
