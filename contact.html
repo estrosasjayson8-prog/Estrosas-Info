@@ -40,7 +40,7 @@
   </div>
 
   <script>
-  // Fade-out for regular navbar links (excluding logo)
+  
   const links = document.querySelectorAll('.navbar ul li a');
   links.forEach(link => {
     link.addEventListener('click', e => {
@@ -51,7 +51,6 @@
     });
   });
 
-  // Custom action for logo
   const logo = document.querySelector('.logo');
   logo.addEventListener('click', e => {
     e.preventDefault();
@@ -66,11 +65,11 @@
 const mobileMenu = document.getElementById('mobileMenu');
 
 menuBtn.addEventListener('click', (e) => {
-  e.stopPropagation(); // prevent closing immediately
+  e.stopPropagation(); 
   mobileMenu.classList.toggle('show');
 });
 
-// Close menu when clicking outside
+
 document.addEventListener('click', (e) => {
   if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
     mobileMenu.classList.remove('show');
