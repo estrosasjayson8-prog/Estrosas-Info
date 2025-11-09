@@ -32,7 +32,7 @@
   </div>
 
   <script>
-  // Fade-out for regular navbar links (excluding logo)
+  
   const links = document.querySelectorAll('.navbar ul li a');
   links.forEach(link => {
     link.addEventListener('click', e => {
@@ -43,23 +43,23 @@
     });
   });
 
-  // Custom action for logo
+  
  const logo = document.querySelector('.logo');
 
 logo.addEventListener('click', e => {
   e.preventDefault();
 
-  // Get the href safely
+ 
   const href = logo.getAttribute('href');
   if (!href) {
     console.error("Logo href is missing!");
     return;
   }
 
-  // Optional custom output
+  
   alert("Welcome to My Page po");
 
-  // Fade out then navigate
+ 
   document.body.classList.add('fade-out');
   setTimeout(() => {
     window.location.href = href;
