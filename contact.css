@@ -1,4 +1,4 @@
-/* ========== GLOBAL RESET ========== */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ body.fade-out {
   opacity: 0;
 }
 
-/* ========== GRID LAYOUT ========== */
+
 .grid-container {
   display: grid;
   grid-template-rows: 80px 1fr;
@@ -29,7 +29,7 @@ body.fade-out {
   overflow: hidden;
 }
 
-/* ======== NAVBAR ======== */
+
 .navbar {
   grid-area: navbar;
   display: flex;
@@ -63,7 +63,7 @@ body.fade-out {
 }
 
 .menu-btn {
-  display: none; /* show only on mobile */
+  display: none; 
   background-color: #17a2b8;
   color: #f0e9ff;
   border: none;
@@ -117,7 +117,7 @@ body.fade-out {
   text-shadow: 0 0 8px #f6c90e;
 }
 
-/* ========== PROFILE SECTION ========== */
+
 .profile {
   grid-area: profile;
   display: flex;
@@ -136,7 +136,7 @@ body.fade-out {
   animation: imgFadeIn 1s ease forwards;
 }
 
-/* ========== CONTENT SECTION ========== */
+
 .content {
   grid-area: content;
   display: flex;
@@ -166,7 +166,7 @@ body.fade-out {
   color: #c2d6d6;
 }
 
-/* ========== ANIMATIONS ========== */
+
 @keyframes fadeDown {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -187,7 +187,7 @@ body.fade-out {
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* ========== MOBILE RESPONSIVE ======== */
+
 @media (max-width: 768px) {
 
   .grid-container {
@@ -204,10 +204,9 @@ body.fade-out {
     display: block;
   }
 
-  /* MOBILE DROPDOWN MENU - LEFT BURGER BUTTON ONLY */
 .menu-container {
-  position: relative; /* container for the button and menu */
-  display: inline-block; /* shrink to button size */
+  position: relative; 
+  display: inline-block; 
 }
 
 .menu-btn {
@@ -223,14 +222,14 @@ body.fade-out {
   z-index: 1001;
 }
 
-/* Mobile dropdown menu */
+
 #mobileMenu {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 100%; /* directly below the button */
-  right: 0;   /* align with left edge of button */
-  width: auto; /* same width as button */
+  top: 100%; 
+  right: 0;   
+  width: auto; 
   background-color: #1a1aff;
   border-radius: 6px;
   padding: 0;
@@ -274,7 +273,7 @@ body.fade-out {
 
 
 
-  /* Profile & content scaling */
+
   .profile img {
     width: 200px;
     height: 200px;
@@ -293,7 +292,7 @@ body.fade-out {
   }
 }
 
-/* ========== SMALLER DEVICES ======== */
+
 @media (max-width: 600px) {
   .profile img { width: 180px; height: 180px; }
   .text-bg h1 { font-size: 18px; }
