@@ -1,4 +1,4 @@
-/* ========== GLOBAL RESET ========== */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ body.fade-out {
   opacity: 0;
 }
 
-/* ========== GRID LAYOUT ========== */
+
 .grid-container {
   display: grid;
   grid-template-rows: 80px 1fr;
@@ -29,7 +29,7 @@ body.fade-out {
   overflow: hidden;
 }
 
-/* ======== NAVBAR (Stable + Zoom Hover) ======== */
+
 .navbar {
   grid-area: navbar;
   display: flex;
@@ -59,7 +59,7 @@ body.fade-out {
 .logo:hover {
   background-color: #8323ea;
   color: black;
-  transform: scale(1.08); /* smooth zoom on hover */
+  transform: scale(1.08); 
 }
 
 .menu-btn {
@@ -99,26 +99,26 @@ body.fade-out {
   font-size: 16px;
   background-color: #a40efb;
   border-radius: 6px;
-  padding: 8px 16px; /* consistent padding for no jump */
+  padding: 8px 16px;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-/* ✅ Zoom effect with stability (no shift) */
+
 .navbar ul li a:hover,
 .navbar ul li a.active {
   background-color: #57a0ff;
   color: black;
-  transform: scale(1.08); /* smooth zoom in */
+  transform: scale(1.08);
 }
 
-/* ✅ Optional glow for hover */
+
 .navbar ul li a:hover {
   text-shadow: 0 0 8px #ff578c;
 }
 
 
 
-/* ========== PROFILE SECTION ========== */
+
 .profile {
   grid-area: profile;
   display: flex;
@@ -137,7 +137,7 @@ body.fade-out {
   animation: imgFadeIn 1s ease forwards;
 }
 
-/* ========== CONTENT SECTION ========== */
+
 .content {
   grid-area: content;
   display: flex;
@@ -167,7 +167,7 @@ body.fade-out {
   color: yellow;
 }
 
-/* ========== ANIMATIONS ========== */
+
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -212,7 +212,7 @@ body.fade-out {
   }
 }
 
-/* ========== RESPONSIVE ========== */
+
 @media (max-width: 992px) {
   .profile img {
     width: 260px;
@@ -256,13 +256,13 @@ body.fade-out {
   }
 
   .navbar ul {
-    display: none; /* hidden by default */
+    display: none; 
     flex-direction: column;
-    width: auto; /* shrink to fit content */
+    width: auto; 
     background-color: #1a1aff;
     position: absolute;
-    top: 60px; /* below navbar / button */
-    right: 20px; /* align with burger button */
+    top: 60px;
+    right: 20px; 
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     padding: 5px 0;
