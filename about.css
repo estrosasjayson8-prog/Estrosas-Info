@@ -9,21 +9,23 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: white;
-  background-color: #1a1a1a;
-  transition: opacity 0.5s ease;
+  background-color: #f79809;
+  transition: opacity 0.5s ease-in-out;
 }
 
-body.fade-out { opacity: 0; }
+body.fade-out {
+  opacity: 0;
+}
 
 /* ====== GRID LAYOUT ====== */
 .grid-container {
   display: grid;
   grid-template-rows: 80px 1fr;
   grid-template-columns: 300px 1fr;
-  height: 100vh;
   grid-template-areas:
     "navbar navbar"
     "profile content";
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -36,61 +38,84 @@ body.fade-out { opacity: 0; }
   background-color: #ff6600;
   padding: 0 20px;
   animation: fadeDown 0.8s ease-out;
-  flex-wrap: nowrap;
+  position: relative;
   width: 100%;
 }
 
 .logo {
-    text-decoration: none;
+  text-decoration: none;
   font-size: 22px;
   font-weight: bold;
   color: white;
-  cursor: pointer;
   background-color: #ff9933;
-  padding: 8px 16px;
   border-radius: 6px;
-  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
 }
 
 .logo:hover {
   background-color: #ffd699;
   color: black;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
+.menu-btn {
+  display: none;
+  background-color: #ff9933;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #ffdd57;
+  color: black;
+  transform: scale(1.05);
+}
+
+/* ====== NAV LINKS ====== */
 .navbar ul {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
 }
 
 .navbar ul li {
   margin-left: 20px;
+  position: relative;
 }
 
 .navbar ul li a {
   display: inline-block;
   color: white;
-  background-color: #ff9933;
   text-decoration: none;
+  background-color: #ff9933;
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 6px;
-  transition: 
-  transform 0.3s ease, 
-    background-color 0.3s ease, 
-    color 0.3s ease, 
-    text-shadow 0.3s ease;  
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
 }
 
-.navbar ul li a:hover,
+/* smooth highlight and no jump */
 .navbar ul li a.active {
-  background-color: #ffdd57;   /* lighter hover color */
-  color: rgb(0, 0, 0);                /* text turns black */
-  transform: scale(1.08);      /* smooth zoom in */
-  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  background-color: #ffdd57;
+  color: black;
+  transform: none;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
-/* ✅ Optional glow for hover */
+
+/* Hover with glow */
 .navbar ul li a:hover {
+  background-color: #ffdd57;
+  color: black;
+  transform: scale(1.05);
   text-shadow: 0 0 8px #131212;
 }
 
@@ -113,16 +138,10 @@ body.fade-out { opacity: 0; }
   animation: imgFadeIn 1s ease forwards;
 }
 
-@keyframes imgFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* ====== CONTENT ====== */
 .content {
   grid-area: content;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -130,7 +149,7 @@ body.fade-out { opacity: 0; }
 }
 
 .text-bg {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px 40px;
   border-radius: 10px;
   animation: textFadeIn 1s ease forwards;
@@ -163,45 +182,66 @@ body.fade-out { opacity: 0; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes imgFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes textFadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ====== HAMBURGER MENU ====== */
-.menu-btn {
-  display: none;
-  background-color: #ff9933;
-  color: white;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 6px 12px;
-  border-radius: 6px;
-}
-
-/* ====== RESPONSIVENESS ====== */
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
   .menu-btn { display: block; }
 
   .navbar ul {
     display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: #ff6600;
+    align-items: center;
     position: absolute;
-    top: 80px;
-    left: 0;
-    z-index: 999;
+    top: 100%; /* directly below navbar */
+    right: 10px;
+    width: max-content; /* fits content exactly */
+    background-color: #ff6600;
+    border-radius: 6px;
+    padding: 4px 0; /* compact */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 2000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: top right;
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  .navbar ul.show {
+    display: flex;
+    opacity: 1;
+    transform: scaleY(1);
   }
 
   .navbar ul li {
-    margin: 0;
-    border-top: 1px solid #ff9933;
+    width: 100%;
     text-align: center;
+    margin: 0;
   }
 
-  .navbar ul.show { display: flex; }
+  .navbar ul li a {
+    display: block;
+    width: 100%;
+    padding: 12px 24px; /* slim padding */
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  }
+
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    background-color: #ffdd57;
+    color: black;
+    transform: scale(1.05);
+  }
 
   .grid-container {
     grid-template-columns: 1fr;
@@ -212,35 +252,22 @@ body.fade-out { opacity: 0; }
   }
 
   .profile img { width: 220px; height: 220px; }
-
   .text-bg h1 { font-size: 24px; }
   .text-bg p, .text-bg ul { font-size: 14px; }
 }
 
+ .logo {
+    font-size: 18px;
+    padding: 5px 12px;
+  }
+
+
 @media (max-width: 480px) {
-  .menu-btn { display: block; }
-
-  .navbar ul {
-    display: none;
-    flex-direction: column;
-    width: 50%;
-    background-color: #ff6600;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    z-index: 999;
-  }
-
-  .navbar ul li {
-    margin: 0;
-    border-top: 1px solid #ff9933;
-    text-align: center;
-  }
-
-  .navbar ul.show { display: flex; }
-
   .profile img { width: 170px; height: 170px; }
-
   .text-bg h1 { font-size: 18px; }
   .text-bg p, .text-bg ul { font-size: 12px; }
 }
+ .logo {
+    font-size: 16px;
+    padding: 4px 10px;
+  }

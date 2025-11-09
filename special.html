@@ -44,29 +44,30 @@
   });
 
   // Custom action for logo
- const logo = document.querySelector('.logo');
+  const logo = document.querySelector('.logo');
+  logo.addEventListener('click', e => {
+    e.preventDefault();
+    const href = logo.getAttribute('href');
+    if (!href) {
+      console.error("Logo href is missing!");
+      return;
+    }
+    alert("Welcome to My Special Page!");
+    document.body.classList.add('fade-out');
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500);
+  });
 
-logo.addEventListener('click', e => {
-  e.preventDefault();
+  // Burger menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
 
-  // Get the href safely
-  const href = logo.getAttribute('href');
-  if (!href) {
-    console.error("Logo href is missing!");
-    return;
-  }
-
-  // Optional custom output
-  alert("Welcome to My Special Page!");
-
-  // Fade out then navigate
-  document.body.classList.add('fade-out');
-  setTimeout(() => {
-    window.location.href = href;
-  }, 500);
-});
-
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 </script>
+
 
 </body>
 </html>

@@ -11,11 +11,13 @@
     <header class="navbar">
       <a href="./special.html" class="logo">MyPortfolio</a>
       <button class="menu-btn">☰</button>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./contact.html" class="active">Contact</a></li>
-      </ul>
+<ul id="mobileMenu">
+  <li><a href="./index.html">Home</a></li>
+  <li><a href="./about.html">About</a></li>
+  <li><a href="./contact.html" class="active">Contact</a></li>
+</ul>
+
+
     </header>
 
     <section class="profile">
@@ -24,17 +26,16 @@
 
     <main class="content">
       <div class="text-bg">
-  <h1>Contact Me</h1>
-  <p>
-   Email:<a href="https://mail.google.com/mail/?view=cm&to=estrosasjayson8@gmail.com" target="_blank">
-      estrosasjayson8@gmail.com
-    </a> 
-    <br>
-    Phone: 09859845145 <br>
-    Facebook: <a href="https://www.facebook.com/Cagadoc.TrishaMae.22" target="_blank">Estrosas Jayson</a>
-  </p>
-</div>
-
+        <h1>Contact Me</h1>
+        <p>
+          Email:<a href="https://mail.google.com/mail/?view=cm&to=estrosasjayson8@gmail.com" target="_blank">
+            estrosasjayson8@gmail.com
+          </a> 
+          <br>
+          Phone: 09859845145 <br>
+          Facebook: <a href="https://www.facebook.com/Cagadoc.TrishaMae.22" target="_blank">Estrosas Jayson</a>
+        </p>
+      </div>
     </main>
   </div>
 
@@ -51,28 +52,32 @@
   });
 
   // Custom action for logo
- const logo = document.querySelector('.logo');
+  const logo = document.querySelector('.logo');
+  logo.addEventListener('click', e => {
+    e.preventDefault();
+    const href = logo.getAttribute('href');
+    if (!href) return;
+    alert("Welcome to My Page po");
+    document.body.classList.add('fade-out');
+    setTimeout(() => { window.location.href = href; }, 500);
+  });
 
-logo.addEventListener('click', e => {
-  e.preventDefault();
+ const menuBtn = document.querySelector('.menu-btn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-  // Get the href safely
-  const href = logo.getAttribute('href');
-  if (!href) {
-    console.error("Logo href is missing!");
-    return;
-  }
-
-  // Optional custom output
-  alert("Welcome to My Page po");
-
-  // Fade out then navigate
-  document.body.classList.add('fade-out');
-  setTimeout(() => {
-    window.location.href = href;
-  }, 500);
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation(); // prevent closing immediately
+  mobileMenu.classList.toggle('show');
 });
 
-</script>
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+    mobileMenu.classList.remove('show');
+  }
+});
+
+
+  </script>
 </body>
 </html>

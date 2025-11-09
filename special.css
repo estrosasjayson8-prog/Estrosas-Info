@@ -250,19 +250,22 @@ body.fade-out {
     height: auto;
   }
 
+  @media (max-width: 768px) {
   .menu-btn {
     display: block;
   }
 
   .navbar ul {
-    display: none;
+    display: none; /* hidden by default */
     flex-direction: column;
-    width: 100%;
+    width: auto; /* shrink to fit content */
     background-color: #1a1aff;
-    text-align: center;
     position: absolute;
-    top: 80px;
-    left: 0;
+    top: 60px; /* below navbar / button */
+    right: 20px; /* align with burger button */
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    padding: 5px 0;
     z-index: 999;
   }
 
@@ -270,6 +273,20 @@ body.fade-out {
     display: flex;
     animation: fadeDown 0.3s ease-in-out;
   }
+
+  .navbar ul li {
+    margin: 0;
+  }
+
+  .navbar ul li a {
+    padding: 8px 20px;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    margin: 2px 0;
+  }
+}
 
   .profile img {
     width: 200px;

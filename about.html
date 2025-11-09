@@ -9,13 +9,14 @@
 <body>
   <div class="grid-container">
     <header class="navbar">
-    <a href="./special.html" class="logo">MyPortfolio</a>
-       <button class="menu-btn">&#9776;</button>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html" class="active">About</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-      </ul>
+      <a href="./special.html" class="logo">MyPortfolio</a>
+      <button class="menu-btn">&#9776;</button>
+     <ul id="navLinks">
+  <li><a href="./index.html">Home</a></li>
+  <li><a href="./about.html" class="active">About</a></li>
+  <li><a href="./contact.html">Contact</a></li>
+</ul>
+
     </header>
 
     <section class="profile">
@@ -37,42 +38,39 @@
     </main>
   </div>
 
- <script>
-  // Fade-out for regular navbar links (excluding logo)
-  const links = document.querySelectorAll('.navbar ul li a');
-  links.forEach(link => {
-    link.addEventListener('click', e => {
+  <script>
+    // Fade-out for regular navbar links (excluding logo)
+    const links = document.querySelectorAll('.navbar ul li a');
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const href = link.getAttribute('href');
+        document.body.classList.add('fade-out');
+        setTimeout(() => { window.location.href = href; }, 500);
+      });
+    });
+
+    // Custom action for logo
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('click', e => {
       e.preventDefault();
-      const href = link.getAttribute('href');
+      const href = logo.getAttribute('href');
+      if (!href) {
+        console.error("Logo href is missing!");
+        return;
+      }
+      alert("Welcome to My Page po");
       document.body.classList.add('fade-out');
       setTimeout(() => { window.location.href = href; }, 500);
     });
-  });
 
-  // Custom action for logo
- const logo = document.querySelector('.logo');
+    // Burger menu toggle
+    const menuBtn = document.querySelector('.menu-btn');
+   const navList = document.getElementById('navLinks');
 
-logo.addEventListener('click', e => {
-  e.preventDefault();
-
-  // Get the href safely
-  const href = logo.getAttribute('href');
-  if (!href) {
-    console.error("Logo href is missing!");
-    return;
-  }
-
-  // Optional custom output
-  alert("Welcome to My Page po");
-
-  // Fade out then navigate
-  document.body.classList.add('fade-out');
-  setTimeout(() => {
-    window.location.href = href;
-  }, 500);
-});
-
-</script>
-
+    menuBtn.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
